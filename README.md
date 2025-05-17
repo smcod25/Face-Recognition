@@ -1,5 +1,5 @@
 # Face-Recognition
-Face Recognition using OpenCV, Python
+Face Recognition using OpenCV, Python.
 This is a face recognition system built using Streamlit for the user interface, OpenCV for face detection, and FaceNet (via facenet-pytorch) for face embedding and recognition. It enables users to add new individuals to a face database and recognize people from uploaded images based on stored embeddings.
 
 How It Works
