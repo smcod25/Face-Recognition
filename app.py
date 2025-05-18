@@ -94,13 +94,13 @@ def recognize_faces_in_image(image):
         identity = "Unknown"
         for person, db_emb in embeddings_db.items():
             dist = cosine(emb, db_emb)
-            if dist < min_dist and dist < 0.6:  # threshold
+            if dist < min_dist and dist < 0.3:  # threshold
                 min_dist = dist
                 identity = person
 
         # Draw rectangle and label
         cv2.rectangle(img_cv, (x, y), (x+w, y+h), (0, 255, 0), 2)
-        cv2.putText(img_cv, identity, (x, y-10), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0,255,0), 2)
+        cv2.putText(img_cv, identity, (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 1.2, (0, 255, 0), 2, cv2.LINE_AA)
 
     return cv2.cvtColor(img_cv, cv2.COLOR_BGR2RGB)
 
@@ -111,6 +111,7 @@ tab1, tab2 = st.tabs(["Add New Person", "Recognize Faces"])
 
 with tab1:
     st.header("Add New Person and Save Embeddings")
+    st.text("Use clear photo with well lit face.")
     person_name = st.text_input("Enter person's name")
     uploaded_images = st.file_uploader("Upload images (multiple)", accept_multiple_files=True, type=["jpg","jpeg","png"])
 
