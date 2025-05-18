@@ -9,7 +9,7 @@ Upload one or more clear images of a person.
 The system detects faces, extracts embeddings using FaceNet, and saves the average embedding.
 
 2. Recognizing Faces
-Upload an image containing one or more faces.
+Upload an image containing an image of a person.
 
 The system compares detected face embeddings against stored ones using cosine similarity.
 
